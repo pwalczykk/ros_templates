@@ -3,7 +3,7 @@
 
 int main(int argc, char** argv){
     ros::init(argc, argv, "image_subscriber");
-    ros::NodeHandle nh("");
+    ros::NodeHandle nh;
     image_transport::ImageTransport it(nh);
 
     // Parameter: window name
