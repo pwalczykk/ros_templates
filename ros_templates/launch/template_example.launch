@@ -1,0 +1,28 @@
+<launch>
+
+    <node
+        name="template_publisher"
+        pkg="ros_templates"
+        type="template_publisher"
+        required="true"
+        ns="my_namespace"
+    />
+
+    <node
+        name="template_subscriber"
+        pkg="ros_templates"
+        type="template_subscriber"
+        output="screen"
+        respawn="true"
+        ns="my_namespace"
+    />
+
+    <node
+        name="rostopic_echo"
+        pkg="rostopic"
+        type="rostopic"
+        args="echo my_namespace/template_topic/my_message"
+        launch-prefix="xterm -e"
+        respawn="true"
+    />
+</launch>

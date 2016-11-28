@@ -1,0 +1,14 @@
+<launch>
+    <node
+        name="simple_publisher"
+        pkg="ros_templates"
+        type="simple_publisher"
+    />
+
+    <node
+        name="simple_subscriber"
+        pkg="ros_templates"
+        type="simple_subcriber"
+        output="screen"
+    />
+</launch>

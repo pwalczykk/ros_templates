@@ -1,0 +1,63 @@
+<launch>
+    <group ns="my_namespace">
+        <node name="image_publisher" pkg="ros_templates" type="image_publisher" required="true">
+
+            <param name="camera_number" value="0"/>
+            <param name="image_topic"   value="my_topic/camera/image"/>
+            <param name="info_topic"    value="my_topic/camera/camera_info"/>
+            <param name="width"    value="160"/>
+            <param name="height"   value="120"/>
+            <param name="fps"      value="30"/>
+
+            <param name="K0" value="0.01"/>
+            <param name="K1" value="0.02"/>
+            <param name="K2" value="0.03"/>
+            <param name="K3" value="0.04"/>
+            <param name="K4" value="0.05"/>
+            <param name="K5" value="0.06"/>
+            <param name="K6" value="0.07"/>
+            <param name="K7" value="0.08"/>
+            <param name="K8" value="0.09"/>
+
+            <param name="R0" value="0.001"/>
+            <param name="R1" value="0.002"/>
+            <param name="R2" value="0.003"/>
+            <param name="R3" value="0.004"/>
+            <param name="R4" value="0.005"/>
+            <param name="R5" value="0.006"/>
+            <param name="R6" value="0.007"/>
+            <param name="R7" value="0.008"/>
+            <param name="R8" value="0.009"/>
+
+            <param name="P0" value="0.0001"/>
+            <param name="P1" value="0.0002"/>
+            <param name="P2" value="0.0003"/>
+            <param name="P3" value="0.0004"/>
+            <param name="P4" value="0.0005"/>
+            <param name="P5" value="0.0006"/>
+            <param name="P6" value="0.0007"/>
+            <param name="P7" value="0.0008"/>
+            <param name="P8" value="0.0009"/>
+            <param name="P9" value="0.0010"/>
+            <param name="P10" value="0.0011"/>
+            <param name="P11" value="0.0012"/>
+
+            <!-- Parameter below use enviromental variable as param, set this variable or change it to desired value if u want to use synchronizer
+            You must also uncomment and recompile proper lines in main.cpp file  -->
+            <!-- <param name="delay_ms" value="$(env CAMERA_STARTUP_DELAY_MS)"/> -->
+        </node>
+
+        <node name="image_subscriber" pkg="ros_templates" type="image_subscriber" output="screen" respawn="true">
+            <param name="window_name"   value="my_window"/>
+            <param name="topic"         value="my_topic/camera/image"/>
+            <param name="width"         value="1280"/>
+            <param name="height"        value="960"/>
+            <param name="fps"           value="30"/>
+            <param name="x"             value="10"/>
+            <param name="y"             value="10"/>
+        </node>
+
+        <node name="rostopic_echo" pkg="rostopic" type="rostopic" args="echo /my_namespace/my_topic/camera/camera_info" launch-prefix="xterm -e" respawn="true"/>
+
+    </group>
+</launch>

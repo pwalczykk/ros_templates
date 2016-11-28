@@ -1,0 +1,15 @@
+<launch>
+    <group ns="parameters">
+        <node
+            name="dynamic_reconfigure_publisher"
+            pkg="ros_templates"
+            type="dynamic_reconfigure_publisher"
+        />
+
+        <node
+            name="rqt_reconfigure"
+            pkg="rqt_reconfigure"
+            type="rqt_reconfigure"
+        />
+    </group>
+</launch>
