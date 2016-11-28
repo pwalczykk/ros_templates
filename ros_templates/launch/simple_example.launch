@@ -8,7 +8,7 @@
     <node
         name="simple_subscriber"
         pkg="ros_templates"
-        type="simple_subcriber"
+        type="simple_subscriber"
         output="screen"
     />
 </launch>
