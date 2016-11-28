@@ -22,7 +22,7 @@ int main(int argc, char** argv){
 
     // Parameter: window's top-left corner position:
     int x;
-    int y;
+    int y; 
     nh.param("image_subscriber/x", x, 10);
     nh.param("image_subscriber/y", y, 10);
 
