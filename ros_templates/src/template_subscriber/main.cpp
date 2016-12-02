@@ -7,7 +7,7 @@ int main(int argc, char** argv)
     ros::init(argc, argv, "template_subscriber");
     ros::NodeHandle nh;
 
-    ros_templatesubscriber <ros_templates::my_message>template_subscriber(&nh, "template_topic/my_message");
+    TemplateSubscriber <ros_templates::my_message>template_subscriber(&nh, "template_topic/my_message");
 
     ros::spin();
 

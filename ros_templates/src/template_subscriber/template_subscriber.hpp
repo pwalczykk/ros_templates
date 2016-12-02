@@ -5,7 +5,7 @@
 #include <std_msgs/Int32.h>
 
 template <typename ros_Message>
-class ros_templatesubscriber
+class TemplateSubscriber
 {
 protected:
     ros::NodeHandle *nh;
@@ -14,11 +14,11 @@ public:
     ros_Message msg;
 
 public:
-    ros_templatesubscriber(ros::NodeHandle *nh, std::string topic){
+    TemplateSubscriber(ros::NodeHandle *nh, std::string topic){
         this->nh = nh;
         this->sub = nh->subscribe(topic, 100, &ros_templatesubscriber::MsgInterrupt, this);
     }
-    ~ros_templatesubscriber(){}
+    ~TemplateSubscriber(){}
 
     void MsgInterrupt(const ros_Message msg){
         this->msg = msg;
