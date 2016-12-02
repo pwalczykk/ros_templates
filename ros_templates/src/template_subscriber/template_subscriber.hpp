@@ -16,7 +16,7 @@ public:
 public:
     TemplateSubscriber(ros::NodeHandle *nh, std::string topic){
         this->nh = nh;
-        this->sub = nh->subscribe(topic, 100, &ros_templatesubscriber::MsgInterrupt, this);
+        this->sub = nh->subscribe(topic, 100, &TemplateSubscriber::MsgInterrupt, this);
     }
     ~TemplateSubscriber(){}
 
