@@ -14,6 +14,8 @@ public:
     ros_Message msg;
 
 public:
+    TemplateSubscriber(){}
+
     TemplateSubscriber(ros::NodeHandle *nh, std::string topic){
         this->nh = nh;
         this->sub = nh->subscribe(topic, 100, &TemplateSubscriber::MsgInterrupt, this);

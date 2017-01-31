@@ -14,6 +14,8 @@ public:
     ros_Message msg;
 
 public:
+    TemplatePublisher(){}
+
     TemplatePublisher(ros::NodeHandle* nh, std::string topic)
     {
         this->nh = nh;

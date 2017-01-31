@@ -17,6 +17,8 @@ public:
     cv::Mat image;
 
 public:
+    ImageSubscriber(){}
+
     ImageSubscriber(ros::NodeHandle *nh, image_transport::ImageTransport *it, std::string topic, std::string window){
         this->nh = nh;
         this->it = it;

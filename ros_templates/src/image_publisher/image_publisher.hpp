@@ -25,6 +25,8 @@ public:
     std_msgs::Header header;
 
 public:
+    ImagePublisher(){}
+
     ImagePublisher(ros::NodeHandle* nh, image_transport::ImageTransport *it, int cam_num, std::string topic) : CameraHandler(cam_num)
     {
         this->nh = nh;

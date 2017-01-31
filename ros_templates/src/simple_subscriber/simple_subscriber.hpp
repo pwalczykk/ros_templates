@@ -13,6 +13,8 @@ public:
     std_msgs::Int32 msg;
 
 public:
+    SimpleSubscriber(){};
+
     SimpleSubscriber(ros::NodeHandle *nh, std::string topic){
         this->nh = nh;
         this->sub = nh->subscribe(topic, 100, &SimpleSubscriber::MsgInterrupt, this);

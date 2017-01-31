@@ -12,6 +12,8 @@ protected:
     int cam_num;
 
 public:
+    CameraHandler(){}
+
     CameraHandler(int cam_num){
         this->cam_num = cam_num;
         cap = cv::VideoCapture();

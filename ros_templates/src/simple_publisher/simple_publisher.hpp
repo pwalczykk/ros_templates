@@ -13,6 +13,8 @@ public:
     std_msgs::Int32 msg;
 
 public:
+    SimplePublisher(){}
+
     SimplePublisher(ros::NodeHandle* nh, std::string topic)
     {
         this->nh = nh;

@@ -15,6 +15,8 @@ public:
     std_msgs::Header* header_ptr;
 
 public:
+    CameraInfoPublisher(){}
+
     CameraInfoPublisher(ros::NodeHandle *nh, int cam_num, std_msgs::Header *header_ptr, int width, int height, std::string topic){
         std::ostringstream camera_name;
         camera_name << "camera" << cam_num;
